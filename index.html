@@ -160,27 +160,21 @@
             
             <div style="border-bottom: 1px solid rgba(255,255,255,0.1); margin: 20px 0;"></div>
 
-            <!-- Maelezo ya Game Halisi -->
             <div class="game-title">Bus Simulator Indonesia (Maleo)</div>
             
-            <!-- Picha ya Game iliyoongezwa vizuri -->
             <img src="https://files.catbox.moe/p3pz20.jpg" alt="Bus Simulator Indonesia TZ Mod" class="game-image">
 
             <p style="font-size: 15px; margin: 0 0 15px 0; color: var(--neon-blue);">📥 MOD YA TANZANIA FULL GAME</p>
 
-            <!-- Kaunta -->
             <div class="share-counter">
                 Vikundi Vilivyobaki: <span id="badoShare" style="color: var(--neon-blue);">5</span> / 5
             </div>
 
-            <!-- Button ya WhatsApp Share -->
             <button class="btn btn-share" onclick="pigaShareWhatsApp()">SHARE KWENYE WHATSAPP 🚀</button>
 
-            <!-- Button ya Download -->
             <a href="https://www.mediafire.com/file/2j89n94kgd0rh05/TRAFFIC_BUS_TZ%25F0%259F%2587%25B9%25F0%259F%2587%25BF%25F0%259F%2587%25B9%25F0%259F%2587%25BF_UKIHITAJI_PINI_NICHEK_0698090890.7z/file" 
                id="downloadBtn" target="_blank" class="btn btn-download">DOWNLOAD GAME (MOD) 📥</a>
 
-            <!-- Boksi la Password linalojificha -->
             <div id="passBox" class="password-box">
                 <span style="font-size: 14px; color: #fff;">🔑 FILE PASSWORD:</span>
                 <div class="password-text">477607</div>
@@ -191,7 +185,6 @@
 
     <script>
         let shareZilizobaki = 5;
-        let mudaWaKubofya = 0;
         
         // Taarifa zako halisi
         const linkYaChaneli = "https://whatsapp.com/channel/0029Vb6MUtB6hENv28MTkw35";
@@ -200,46 +193,32 @@
         const whatsappUrl = "https://api.whatsapp.com/send?text=" + encodeURIComponent(ujumbeWako);
 
         function pigaShareWhatsApp() {
-            // Rekodi muda alioondoka kwenda WhatsApp
-            mudaWaKubofya = new Date().getTime();
-            
-            // Fungua WhatsApp link
+            // Inamfungulia mtumiaji WhatsApp moja kwa moja
             window.open(whatsappUrl, '_blank');
 
-            // Mfumo unamvizia akirudi
-            setTimeout(function() {
-                let mudaWaKurudi = new Date().getTime();
-                let sekundeZilizopita = (mudaWaKurudi - mudaWaKubofya) / 1000;
-
-                // Kama amerudi chini ya sekunde 8, mfumo unajua hajatuma chochote
-                if (sekundeZilizopita < 8) {
-                    alert("⚠️ Mfumo umegundua HAUJASHARE kwenye group! Tafadhali chagua group, subiri ujumbe utume ndipo urudi.");
-                    return; 
-                }
-
-                // Kama ameshinda ulinzi, punguza kaunta
-                if (shareZilizobaki > 1) {
-                    shareZilizobaki--;
-                    document.getElementById('badoShare').innerText = shareZilizobaki;
-                    alert("Imepokelewa vizuri! Share kwenye vikundi vingine vilivyobaki.");
-                } else {
-                    // Amekamilisha vikundi vyote 5
-                    shareZilizobaki = 0;
-                    document.getElementById('badoShare').innerText = shareZilizobaki;
-                    document.getElementById('badoShare').style.color = "var(--neon-green)";
-                    
-                    // Fungua Button ya Download
-                    const btnDownload = document.getElementById('downloadBtn');
-                    btnDownload.classList.add('active');
-                    btnDownload.innerText = "DOWNLOAD NOW (MEDIAFIRE) 📥";
-                    
-                    // Onyesha Boksi la Password
-                    document.getElementById('passBox').style.display = "block";
-                    
-                    alert("🎉 Hongera! Umekamilisha masharti yote. Button ya download na Password vipo wazi sasa.");
-                }
-            }, 1500); // Inafanya uhakiki sekunde 1.5 baada ya kurudi kwenye page
+            // Inapunguza kaunta mara moja bila ulinzi wa sekunde
+            if (shareZilizobaki > 1) {
+                shareZilizobaki--;
+                document.getElementById('badoShare').innerText = shareZilizobaki;
+                alert("Imepokelewa vizuri! Share kwenye vikundi vingine vilivyobaki.");
+            } else {
+                // Ikifika 0, inafungua kila kitu
+                shareZilizobaki = 0;
+                document.getElementById('badoShare').innerText = shareZilizobaki;
+                document.getElementById('badoShare').style.color = "var(--neon-green)";
+                
+                // Fungua Button ya Download
+                const btnDownload = document.getElementById('downloadBtn');
+                btnDownload.classList.add('active');
+                btnDownload.innerText = "DOWNLOAD NOW (MEDIAFIRE) 📥";
+                
+                // Onyesha Boksi la Password
+                document.getElementById('passBox').style.display = "block";
+                
+                alert("🎉 Hongera! Umekamilisha masharti yote. Button ya download na Password vipo wazi sasa.");
+            }
         }
     </script>
 </body>
 </html>
+
