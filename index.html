@@ -184,8 +184,6 @@
     </div>
 
     <script>
-        let shareZilizobaki = 5;
-        
         // Taarifa zako halisi
         const linkYaChaneli = "https://whatsapp.com/channel/0029Vb6MUtB6hENv28MTkw35";
         const ujumbeWako = "Oya! Shusha hii Bus Simulator Indonesia (Maleo) yenye MOD YA TANZANIA FULL GAME bure kabisa hapa Mickster Vault. Jiunge pia na chaneli yetu kupata updates zote: " + linkYaChaneli;
@@ -193,32 +191,24 @@
         const whatsappUrl = "https://api.whatsapp.com/send?text=" + encodeURIComponent(ujumbeWako);
 
         function pigaShareWhatsApp() {
-            // Inamfungulia mtumiaji WhatsApp moja kwa moja
+            // Inamfungulia mtumiaji WhatsApp kushare kwenye magroup yake yote mara moja
             window.open(whatsappUrl, '_blank');
 
-            // Inapunguza kaunta mara moja bila ulinzi wa sekunde
-            if (shareZilizobaki > 1) {
-                shareZilizobaki--;
-                document.getElementById('badoShare').innerText = shareZilizobaki;
-                alert("Imepokelewa vizuri! Share kwenye vikundi vingine vilivyobaki.");
-            } else {
-                // Ikifika 0, inafungua kila kitu
-                shareZilizobaki = 0;
-                document.getElementById('badoShare').innerText = shareZilizobaki;
-                document.getElementById('badoShare').style.color = "var(--neon-green)";
-                
-                // Fungua Button ya Download
-                const btnDownload = document.getElementById('downloadBtn');
-                btnDownload.classList.add('active');
-                btnDownload.innerText = "DOWNLOAD NOW (MEDIAFIRE) 📥";
-                
-                // Onyesha Boksi la Password
-                document.getElementById('passBox').style.display = "block";
-                
-                alert("🎉 Hongera! Umekamilisha masharti yote. Button ya download na Password vipo wazi sasa.");
-            }
+            // Hapa tunashusha kaunta hadi 0 papo hapo kwa mbofyo mmoja tu!
+            document.getElementById('badoShare').innerText = "0";
+            document.getElementById('badoShare').style.color = "var(--neon-green)";
+            
+            // Fungua Button ya Download moja kwa moja
+            const btnDownload = document.getElementById('downloadBtn');
+            btnDownload.classList.add('active');
+            btnDownload.innerText = "DOWNLOAD NOW (MEDIAFIRE) 📥";
+            
+            // Onyesha Boksi la Password moja kwa moja
+            document.getElementById('passBox').style.display = "block";
+            
+            // Ujumbe wa ushindi
+            alert("🎉 Hongera! Umekamilisha masharti yote ya Share. Button ya download na Password vipo wazi sasa.");
         }
     </script>
 </body>
 </html>
-
